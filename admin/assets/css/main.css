@@ -1,0 +1,303 @@
+
+
+@font-face {
+    font-family: "mylogofont";
+    src: url(../font/BerkshireSwash-Regular.ttf)format("truetype");
+}
+@font-face {
+    font-family:"mymainfont";
+    src: url(../font/static/Raleway-Regular.ttf)format("truetype");
+}
+@font-face {
+    font-family:"myboldfont";
+    src: url(../font/static/Raleway-Bold.ttf)format("truetype");
+}
+*{
+    padding-left: 0;
+    padding-right: 0;
+    font-family:"mymainfont" ;
+}
+.navbar-brand{
+    font-family: "mylogofont";
+    color: #38261a;
+}
+.navbar-brand .fa-heart{
+    color: #e56399;
+}
+.navbar-brand .fa-heart:hover{
+    color: #38261a;
+}
+.navbar-brand:hover{
+    color: #e56399;
+}
+.fa-cart-shopping, .fa-user:hover{
+    color: #e56399;
+}
+.fa-magnifying-glass:hover{
+    color: #e56399;
+}
+.navbar{
+    background-color: white;
+}
+
+.navbar-nav a{
+    color: #38261a;
+
+}
+#greetings{
+    padding-top:50px;
+}
+#greetings h3{
+    padding-bottom: 20px;
+}
+#greetings p{
+    padding-right: 15px;
+}
+.shopnow{
+    background-color: #e56399;
+    color: #ffeaf2;
+   font-weight: bold;
+   font-size: 2em;
+}
+
+.shopnow:hover{
+    background-color: #ffeaf2;
+    color: #38261a;
+}
+
+#visit{
+    padding-top: 30px;
+    padding-bottom: 30px;
+   
+}
+.location{
+    padding-top: 20px;
+}
+.bestseller{
+    padding-top: 30px;
+}
+.pbold{
+    font-family: "myboldfont";
+    color:#38261a;
+}
+.addcart{
+    background-color: #ffffff;
+    color:#38261a;
+    border-color: #38261a;
+}
+.addcart:hover{
+    background-color: #e56399;
+    border-color: #e56399;
+    color:#ffeaf2;
+}
+.naira{
+    font-weight: bold;
+}
+.footer{
+    min-height: 100px;
+    background-color: #ffeaf2;
+    color: #38261a;
+    padding-top: 30px;
+}
+.footer ul{
+    list-style: none;
+}
+.footer ul li a{
+    color: #38261a;
+}
+.footer a{
+    text-decoration: none;
+}
+.footer h6{
+    font-weight: bold;
+}
+.bgbrown{
+    background-color: #ffeaf2;
+    
+}
+.custom h3{
+    color: #38261a;
+}
+.link{
+    text-decoration: none;
+}
+.submit .btn{
+    background-color: #ffeaf2;
+    color: #38261a;
+    font-weight: bold;
+}
+.loginreg{
+    min-height: 200px;
+    margin-top: 200px;
+}
+#reg,#login{
+    background-color: #38261a;
+    color: #ffeaf2;
+}
+.item{
+    margin-right: 250px;
+    font-weight: bold;
+}
+.price{
+    margin-right:100px ;
+    font-weight: bold;
+}
+.qty{
+    margin-right:50px ;
+    font-weight: bold;
+}
+.subtotal{
+    font-weight: bold;
+}
+.dropdown-menu{
+    min-height: 100px;
+}
+#emailsign{
+    text-decoration:none;
+    color:#38261a
+}
+#emailsign:hover{
+    color: red;
+}
+
+.profileBanner{
+    min-height: 400px;
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url("../images/profilebanner.jpg");
+    background-size: cover;
+
+}
+.dashboard{
+    margin-top: 80px;
+    min-height: 420px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.dashboard h4{
+    font-weight: bold;
+    color: #38261a;
+}
+
+.profileBanner h2{
+    font-size: 3em;
+    color: white;
+    font-weight: bolder;
+    padding-top: 100px;
+}
+
+.dashboardlinks a{
+    color: #38261a;
+    font-weight: bold;
+}
+
+.dashboardlinks a:hover{
+    color: #e56399;
+}
+
+.dashboardlinks li{
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.dashboardlinks button{
+    border: none;
+    background-color: white;
+    color: #38261a;
+    font-weight: bold;
+}
+
+.dashboardlinks button:hover{
+    color: #e56399;
+}
+
+.reg-form input{
+    margin: 10px;
+}
+
+.reg-form label{
+    padding-left: 30px;
+}
+
+.reg-form select{
+    margin: 10px;
+    padding-left: 5px;
+}
+
+.reg-btn{
+    background-color: #38261a;
+    font-weight: bold;
+}
+
+.register{
+    margin-top: 50px;
+}
+
+.register h4{
+    font-weight: bold;
+    color: #e56399;
+}
+
+.logoutbtn{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #e56399;
+    border-color: #e56399;
+    color: white;
+}
+
+
+.dropdown-menu{
+    background-color: #ffeaf2;
+}
+
+.edit-delete{
+    margin-left: 250px;
+}
+
+.actiondisplay{
+    display: flex!important;
+}
+
+/* dashboard styling */
+.dashside{
+    border-right: 10px outset #e56399 ;
+}
+
+.adminintro{
+    font-weight: bold;
+}
+
+#qty{
+    display: none;
+}
+
+.imgnamelink{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* styling for all buttons except register and login */
+.proimage:hover{
+    background-color: #e56399;
+}
+
+@media screen and (min-width: 297px) and (max-width: 767px) {
+    #loginreg{
+        min-height: 200px;
+    }
+
+    .vr{
+        display: none;
+    }
+
+    .greeting{
+        position: relative;
+        bottom: 250px;
+    }
+
+    .dashside{
+        border-right: none;
+    }
+
+}
