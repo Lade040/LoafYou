@@ -8,7 +8,7 @@ $totalPrice = 0;
     <?php include("partials/navbar.php"); ?>
 
     <!-- Cart Section -->
-    <div class="row justify-content-center mt-5 cartsection" id="">
+    <div class="row justify-content-center mt-5 cartsection">
       <div class="col mt-3">
         <h3 class="text-center pbold">Shopping Cart</h3>
       </div>
@@ -23,13 +23,13 @@ $totalPrice = 0;
               // Display product information and create links
               echo "<div class='row mb-3 mt-5 justify-content-center' id='content'><div class='col-md-5'>";
               echo "<a href='product.php?id=$productId'><img src='admin/uploads/{$productDetails['prod_img']}' class='img-fluid mb-2'></a><br>";
-              echo "<span>{$productDetails['prod_name']}<span>&nbsp;&nbsp;Price: &#8358;{$productDetails['prod_amt']} x <input type='number' min='1' class='quantity-input col-2' data-product-id='$productId' value='$quantity'>&nbsp;&nbsp;Subtotal: $subtotal &nbsp;&nbsp;";
+              echo "<span>{$productDetails['prod_name']}<span>&nbsp;&nbsp;Price: &#8358;{$productDetails['prod_amt']} x <input type='number' min='1' class='quantity-input col-2' data-product-id='$productId' value='$quantity'>&nbsp;&nbsp;Subtotal:&#8358;". number_format($subtotal). " &nbsp;&nbsp;";
               echo "<button class='btn btn-sm btn-danger remove-btn'><i class='fa-solid fa-trash'></i></button>";
               echo "</div></div>";
           }
           $totalPrice=array_sum($subtotals);
-          echo "<div><h4 class='text-end me-5'>Total:&#8358;$totalPrice </h4></div>";
-          // links to view cart or proceed to checkout
+          echo "<div><h4 class='text-end me-5'>Total:&#8358;". number_format($totalPrice) . " </h4></div>";
+          // link to proceed to checkout
           echo "<div class='mt-5 mb-5 justify-content-center'><div class='row justify-content-center'><div class='col-8 d-grid gap-2 mx-auto'> <a href='checkout.php' class='btn btn-lg mb-2 proimage btn-outline-secondary'>Proceed to Checkout</a></div></div>";
           
       } else {
@@ -61,7 +61,7 @@ $totalPrice = 0;
                    });
                }
 
-               function removeProductFromCart(productId) {
+      function removeProductFromCart(productId) {
               $.ajax({
                  url: "remove_from_cart.php",
                  method: "post",
@@ -74,38 +74,35 @@ $totalPrice = 0;
                   console.log(error);
              }
             });
-            }
-            
-            
-        $(".quantity-input").on("change", function () {
+          }
+             
+        $(document).on("change", ".quantity-input", function() {
                  var productId = $(this).data("product-id");
                  var newQuantity = parseInt($(this).val());
                 //  alert(productId);
                 //  alert(newQuantity);
                  updateCartQuantity(productId, newQuantity);
-                 showOffcanvasContent()
+                 showOffCartContent()
                });
 
-              $(".remove-btn").on("click", function () {
+               $(document).on("click", ".remove-btn", function() {
                 var productId = $(this).closest(".row").find(".quantity-input").data("product-id");
                 //  alert(productId);
                  removeProductFromCart(productId);
-                 showOffcanvasContent()
-               });
-               function showOffcanvasContent() {
-        $.ajax({
-            url: "ajax_cart.php", 
-            type: "GET",
-            success: function(cartContent) {
-                $(".cartsection").html(cartContent);
-                var offcanvasElement = document.getElementById('content');
-                offcanvasElement.show(); 
-            },
-            error: function(xhr, status, error) {
-                console.log(error);
-            }
-        });
-     }
+                 showOffCartContent()
+          });
+         function showOffCartContent() {
+                    $.ajax({
+                        url: "cart.php", 
+                        type: "GET",
+                        success: function(cartContent) {
+                            $(".cartsection").html(cartContent);
+                        },
+                        error: function(xhr, status, error) {
+                            console.log(error);
+                        }
+                    });
+          }
               
 
               

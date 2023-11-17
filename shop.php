@@ -81,7 +81,7 @@ session_start();
             </div>
             <div class="row">
               <div class="col col-6  d-grid gap-2 mx-auto  mb-3 mt-5">
-                <button class="btn btn-lg btn-outline-dark proimage">Load More</button>
+                <button class="btn btn-lg btn-outline-dark proimage" id="loadmore" >Load More</button>
               </div>
             </div>
             
@@ -129,6 +129,13 @@ session_start();
                 })
               })
               
+              // code to load more product in shop
+              $(document).on("click", "#loadmore", function(){
+                  $ajax({
+                    url
+                  })
+              })
+
               
               //  little animation for shop products
               $(".imgs").on({
